@@ -1,9 +1,10 @@
-import React, { Children, FC, ReactElement, ReactNode } from "react";
+import React, { FC, } from "react";
 import Head from "next/head";
+import { Navbar } from "../ui/Navbar";
 
 interface Props {
-  children: JSX.Element | JSX.Element[];
   title?: string;
+  children: JSX.Element | JSX.Element[];
 }
 
 export const Layout: FC<Props> = ({ children, title }) => {
@@ -16,9 +17,13 @@ export const Layout: FC<Props> = ({ children, title }) => {
         <meta name="keywords" content="XXXX, pokemón, pokedex" />
       </Head>
 
-      {/* <Navbar /> */}
+      <Navbar />
 
-      <main>{children}</main>
+      <main 
+        style={{
+          padding: "0 30px"
+        }}
+      >{children}</main>
     </>
   );
 };
